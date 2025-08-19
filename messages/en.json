@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "site_title": "Solanize.ai",
+    "site_description": "Talk to your Solana wallet. Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom."
+  },
+  "navigation": {
+    "home": "Home",
+    "features": "Features", 
+    "demo": "Demo",
+    "security": "Security",
+    "docs": "Docs",
+    "toggle_theme": "Toggle theme",
+    "toggle_language": "Toggle language",
+    "toggle_menu": "Toggle menu"
+  },
+  "hero": {
+    "headline": "Talk to your Solana wallet.",
+    "subheadline": "Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom.",
+    "cta_primary": "🚀 Try the App",
+    "cta_secondary": "⚡ Join Waitlist",
+    "demo_text": "Type: \"Rebalance to 60% SOL, 40% USDC\""
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps to manage your Solana portfolio",
+    "step1": {
+      "title": "Type",
+      "description": "Use natural language: \"Rebalance to 60% SOL, 40% USDC\""
+    },
+    "step2": {
+      "title": "AI Suggests", 
+      "description": "Review proposed transactions with prices, fees, and slippage"
+    },
+    "step3": {
+      "title": "You Sign",
+      "description": "Phantom wallet pops up, you approve, transaction executed"
+    }
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need for DeFi, simplified",
+    "natural_language": {
+      "title": "Natural Language Commands",
+      "description": "No complex UIs. Just chat with your wallet like talking to a friend."
+    },
+    "multi_protocol": {
+      "title": "Multi-Protocol Support", 
+      "description": "Jupiter for swaps, Marinade for staking, and more protocols integrated."
+    },
+    "transparent": {
+      "title": "Transparent Transactions",
+      "description": "Review all prices, fees, and slippage before signing anything."
+    },
+    "secure": {
+      "title": "Phantom Secured",
+      "description": "Your keys stay in Phantom wallet. Never shared, always secure."
+    },
+    "portfolio": {
+      "title": "Portfolio Copilot",
+      "description": "Track balances, simulate trades, and get AI-powered insights."
+    },
+    "real_time": {
+      "title": "Real-Time Data",
+      "description": "Live prices from Pyth Network and instant market updates."
+    }
+  },
+  "demo": {
+    "title": "See It In Action",
+    "subtitle": "Watch how easy it is to manage your Solana portfolio"
+  },
+  "security": {
+    "title": "Trust & Security",
+    "subtitle": "Your assets are always under your control",
+    "phantom_integration": "Phantom wallet integration — no private keys shared",
+    "on_chain_transparency": "On-chain transparency — link to Solscan for every transaction", 
+    "security_first": "Security-first design — transactions proposed, never auto-executed",
+    "audited": "Smart contracts audited by leading security firms"
+  },
+  "integrations": {
+    "title": "Powered By",
+    "subtitle": "Built on the best Solana infrastructure"
+  },
+  "cta": {
+    "title": "Ready to Talk to Your Wallet?",
+    "subtitle": "Join thousands managing their Solana portfolio the smart way",
+    "primary": "🚀 Start Now with Phantom",
+    "secondary": "⚡ Join the Waitlist"
+  },
+  "footer": {
+    "description": "AI-powered Solana wallet interface",
+    "quick_links": "Quick Links",
+    "category": "Resources", 
+    "connect": "Connect",
+    "email_label": "Email:",
+    "copyright": "All rights reserved.",
+    "tagline": "Built on Solana"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "coming_soon": "Coming Soon"
+  }
+}

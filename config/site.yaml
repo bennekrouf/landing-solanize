@@ -1,0 +1,43 @@
+# Site Configuration
+site:
+  name: "Solanize.ai"
+  domain: "solanize.ai"
+  description: "Talk to your Solana wallet. Swap, stake, lend, and rebalance your portfolio — just by chatting."
+  locale: "en"
+  tagline: "AI-powered Solana wallet interface"
+  
+# API Configuration
+api:
+  phantom_connect_url: "https://phantom.app"
+  jupiter_api: "https://quote-api.jup.ag"
+  pyth_network: "https://pyth.network"
+  
+# Logging preferences (following your Rust preference)
+logging:
+  level: "trace"
+  format: "json"
+  output: "console"
+
+# App-specific settings
+app:
+  demo_mode: true
+  features:
+    - "Natural language commands"
+    - "Multi-protocol support"
+    - "Transparent transactions"
+    - "Phantom integration"
+    - "Portfolio insights"
+  
+integrations:
+  - name: "Phantom Wallet"
+    logo: "/integrations/phantom.svg"
+    url: "https://phantom.app"
+  - name: "Jupiter"
+    logo: "/integrations/jupiter.svg" 
+    url: "https://jup.ag"
+  - name: "Marinade"
+    logo: "/integrations/marinade.svg"
+    url: "https://marinade.finance"
+  - name: "Pyth Network"
+    logo: "/integrations/pyth.svg"
+    url: "https://pyth.network"
