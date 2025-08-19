@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   };
 
   // Empty footer navigation - add your own
-  const footerNav = [
+  const footerNav: { label: string; path: string }[] = [
     // Example: { label: t('privacy'), path: "/privacy" },
     // Example: { label: t('terms'), path: "/terms" },
   ];

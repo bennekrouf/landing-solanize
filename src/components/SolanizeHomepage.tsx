@@ -144,10 +144,10 @@ const SolanizeHomepage = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             >
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center">
-                {t('hero.cta_primary')}
-                <FiArrowRight className="ml-2 w-5 h-5" />
-              </button>
+              <button 
+  onClick={() => window.open('https://app.solanize.ai', '_blank')}
+  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center"
+>              </button>
               <button className="px-8 py-4 border-2 border-border hover:border-primary rounded-xl text-lg font-semibold hover:bg-primary/5 transition-all duration-200 flex items-center justify-center">
                 <FiPlay className="mr-2 w-5 h-5" />
                 {t('demo.title')}
@@ -456,10 +456,10 @@ const SolanizeHomepage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center">
-                {t('cta.primary')}
-                <FiArrowRight className="ml-2 w-5 h-5" />
-              </button>
+              <button 
+  onClick={() => window.open('https://app.solanize.ai', '_blank')}
+  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center"
+>              </button>
             </div>
           </motion.div>
         </div>
