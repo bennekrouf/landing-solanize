@@ -5,10 +5,11 @@
   },
   "navigation": {
     "home": "Home",
-    "features": "Features", 
+    "features": "Features",
     "demo": "Demo",
     "security": "Security",
     "docs": "Docs",
+    "blog": "Blog",
     "toggle_theme": "Toggle theme",
     "toggle_language": "Toggle language",
     "toggle_menu": "Toggle menu"
@@ -25,15 +26,18 @@
     "subtitle": "Three simple steps to manage your Solana portfolio",
     "step1": {
       "title": "Type",
-      "description": "Use natural language: \"Rebalance to 60% SOL, 40% USDC\""
+      "description": "Use natural language: \"Rebalance to 60% SOL, 40% USDC\"",
+      "example": "\"Rebalance to 60% SOL, 40% USDC\""
     },
     "step2": {
-      "title": "AI Suggests", 
-      "description": "Review proposed transactions with prices, fees, and slippage"
+      "title": "AI Suggests",
+      "description": "Review proposed transactions with prices, fees, and slippage",
+      "example": "prices, fees and slippage"
     },
     "step3": {
       "title": "You Sign",
-      "description": "Phantom wallet pops up, you approve, transaction executed"
+      "description": "Phantom wallet pops up, you approve, transaction executed",
+      "example": "you approve, transaction executed"
     }
   },
   "features": {
@@ -44,7 +48,7 @@
       "description": "No complex UIs. Just chat with your wallet like talking to a friend."
     },
     "multi_protocol": {
-      "title": "Multi-Protocol Support", 
+      "title": "Multi-Protocol Support",
       "description": "Jupiter for swaps, Marinade for staking, and more protocols integrated."
     },
     "transparent": {
@@ -72,7 +76,7 @@
     "title": "Trust & Security",
     "subtitle": "Your assets are always under your control",
     "phantom_integration": "Phantom wallet integration — no private keys shared",
-    "on_chain_transparency": "On-chain transparency — link to Solscan for every transaction", 
+    "on_chain_transparency": "On-chain transparency — link to Solscan for every transaction",
     "security_first": "Security-first design — transactions proposed, never auto-executed",
     "audited": "Smart contracts audited by leading security firms"
   },
@@ -89,7 +93,7 @@
   "footer": {
     "description": "AI-powered Solana wallet interface",
     "quick_links": "Quick Links",
-    "category": "Resources", 
+    "category": "Resources",
     "connect": "Connect",
     "email_label": "Email:",
     "copyright": "All rights reserved.",

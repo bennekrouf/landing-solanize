@@ -5,10 +5,11 @@
   },
   "navigation": {
     "home": "Accueil",
-    "features": "Fonctionnalités", 
+    "features": "Fonctionnalités",
     "demo": "Démo",
     "security": "Sécurité",
     "docs": "Docs",
+    "blog": "Blog",
     "toggle_theme": "Changer le thème",
     "toggle_language": "Changer la langue",
     "toggle_menu": "Ouvrir le menu"
@@ -28,7 +29,7 @@
       "example": "\"Rééquilibre vers 60% SOL, 40% USDC\""
     },
     "step2": {
-      "title": "L'IA Suggère", 
+      "title": "L'IA Suggère",
       "description": "Vérifiez les transactions proposées avec",
       "example": "prix, fees et slippage"
     },
@@ -46,7 +47,7 @@
       "description": "Pas d'UI complexes. Chattez avec votre wallet comme avec un ami."
     },
     "multi_protocol": {
-      "title": "Support Multi-Protocoles", 
+      "title": "Support Multi-Protocoles",
       "description": "Jupiter pour les swaps, Marinade pour le staking, et plus de protocoles intégrés."
     },
     "transparent": {
@@ -74,7 +75,7 @@
     "title": "Confiance & Sécurité",
     "subtitle": "Vos assets sont toujours sous votre contrôle",
     "phantom_integration": "Intégration Phantom wallet — aucune clé privée partagée",
-    "on_chain_transparency": "Transparence on-chain — lien vers Solscan pour chaque transaction", 
+    "on_chain_transparency": "Transparence on-chain — lien vers Solscan pour chaque transaction",
     "security_first": "Design security-first — transactions proposées, jamais auto-exécutées",
     "audited": "Smart contracts audités par des firmes de sécurité leaders"
   },
@@ -90,7 +91,7 @@
   "footer": {
     "description": "Interface wallet Solana propulsée par l'IA",
     "quick_links": "Liens Rapides",
-    "category": "Ressources", 
+    "category": "Ressources",
     "connect": "Contact",
     "email_label": "Email :",
     "copyright": "Tous droits réservés.",
