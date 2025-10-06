@@ -8,6 +8,9 @@
     "start": "next start -p 4002",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "publish:daily": "bash scripts/publish-daily.sh",
+    "publish:pause": "bash scripts/pause-publishing.sh",
+    "queue:add": "bash scripts/queue-post.sh",
     "sitemap": "node scripts/generate-sitemap.js",
     "blog-data": "node scripts/generate-blog-data.js"
   },

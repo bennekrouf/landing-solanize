@@ -49,3 +49,8 @@ public/sitemap.xml
 .publishing-paused
 .skip-today
 .queue-state.json
+
+# Publishing state
+.last-publish
+.publishing-paused
+logs/
