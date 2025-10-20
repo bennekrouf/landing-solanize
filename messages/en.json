@@ -3,6 +3,21 @@
     "site_title": "Solanize.ai",
     "site_description": "Talk to your Solana wallet. Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom."
   },
+  "contact": {
+    "title": "Contact",
+    "get_in_touch": "Get in Touch",
+    "form_title": "Send a Message",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company (Optional)",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "success_title": "Message Sent Successfully!",
+    "success_message": "Thank you for reaching out about Solanize.ai. We'll get back to you within 24 hours.",
+    "whatsapp_help": "Need Immediate Help?",
+    "whatsapp_description": "Chat with us directly about your Solana portfolio questions."
+  },
   "navigation": {
     "home": "Home",
     "features": "Features",

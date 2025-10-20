@@ -6,8 +6,22 @@ site:
   locale: "en"
   tagline: "AI-powered Solana wallet interface"
   
+# Contact Configuration
+contact:
+  whatsapp:
+    number: "+1234567890"  # Replace with your number
+    default_message: "Hello, I'm interested in Solanize.ai and would like to learn more about AI-powered Solana portfolio management."
+  email: "contact@solanize.ai"
+  
+# Analytics Configuration
+analytics:
+  plausible:
+    domain: "solanize.ai"
+    script_url: "https://plausible.io/js/script.outbound-links.js"
+    
 # API Configuration
 api:
+  contact_endpoint: "https://api.solanize.ai/contact"
   phantom_connect_url: "https://phantom.app"
   jupiter_api: "https://quote-api.jup.ag"
   pyth_network: "https://pyth.network"

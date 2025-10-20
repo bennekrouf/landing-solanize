@@ -1,8 +1,8 @@
-export {};
+export { };
 
 declare global {
   interface Window {
-    // Add your global window types here
+    // Plausible Analytics
     plausible?: {
       (event: string, options?: { props?: Record<string, string> }): void;
       q?: Array<unknown>;

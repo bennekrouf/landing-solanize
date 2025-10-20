@@ -3,7 +3,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { trackFeatureInteraction } from '@/components/analytics/PlausibleTracker';
+import { WhatsAppButton } from '@/components/contact/WhatsAppButton';
 import LayoutTemplate from '@/components/layout/LayoutTemplate';
+import { PlausibleTracker } from '@/components/analytics/PlausibleTracker';
+import { FloatingWhatsApp } from '@/components/contact/WhatsAppButton';
+
 import {
   FiMessageCircle,
   FiCheck,
@@ -17,6 +22,8 @@ import {
   FiPlay,
   FiStar
 } from 'react-icons/fi';
+import Link from 'next/link';
+import { FiMail } from 'react-icons/fi';
 
 const SolanizeHomepage = () => {
   const t = useTranslations();
@@ -108,6 +115,8 @@ const SolanizeHomepage = () => {
 
   return (
     <LayoutTemplate>
+      <PlausibleTracker domain="solanize.ai" />
+      <FloatingWhatsApp />
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-br from-background via-background to-muted/20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#FF6B00,#FF8533,#FFAA66)] opacity-[0.02] bg-[size:40px_40px] bg-[position:0_0,20px_20px] bg-repeat"></div>
@@ -457,13 +466,47 @@ const SolanizeHomepage = () => {
               {t('cta.subtitle')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button
-                onClick={() => window.open('https://app.solanize.ai', '_blank')}
+                onClick={() => {
+                  trackFeatureInteraction('app_launch');
+                  window.open('https://app.solanize.ai', '_blank');
+                }}
                 className="px-8 py-4 bg-[#FF6B00] hover:bg-[#FF6B00]/90 text-white rounded-xl text-lg font-semibold transition-all duration-200 shadow-xl shadow-orange-500/20 hover:scale-105 flex items-center justify-center"
               >
                 {t('cta.primary')}
               </button>
+
+              <Link
+                href="/contact"
+                className="px-8 py-4 border-2 border-border hover:border-[#FF6B00] rounded-xl text-lg font-semibold hover:bg-[#FF6B00]/5 transition-all duration-200 flex items-center justify-center"
+                onClick={() => trackFeatureInteraction('contact_navigation')}
+              >
+                Get in Touch
+              </Link>
+            </div>
+
+            {/* Quick Contact Options */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <WhatsAppButton
+                message="Hello, I'm interested in Solanize.ai's AI-powered portfolio management. Can you tell me more?"
+                source="homepage_cta"
+                variant="icon"
+                className="bg-green-500/10 border border-green-500/20 text-green-600 hover:bg-green-500 hover:text-white"
+              >
+                Chat on WhatsApp
+              </WhatsAppButton>
+
+              <span className="text-muted-foreground text-sm">or</span>
+
+              <a
+                href="mailto:contact@solanize.ai"
+                className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-muted-foreground hover:text-foreground hover:border-[#FF6B00]/20 transition-colors"
+                onClick={() => trackFeatureInteraction('email_contact')}
+              >
+                <FiMail className="w-4 h-4" />
+                Email Us
+              </a>
             </div>
           </motion.div>
         </div>

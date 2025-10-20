@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import LayoutTemplate from '@/components/layout/LayoutTemplate';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { WhatsAppButton } from '@/components/contact/WhatsAppButton';
 import { FiMail, FiClock, FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi';
-import Link from 'next/link';
 
 const ContactPage = () => {
   const fadeInUp = {

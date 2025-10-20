@@ -22,6 +22,7 @@ const Navbar: React.FC = () => {
     { label: t('demo'), path: "/#demo" },
     { label: t('security'), path: "/#security" },
     { label: t('blog'), path: "/blog" },
+    { label: "Contact", path: "/contact" },
   ];
 
   // Language options
