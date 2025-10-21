@@ -15,31 +15,11 @@ const Navbar: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
 
-  // Safe locale handling with fallback
-  let locale: string;
-  let t: any;
+  // Always call hooks - never conditionally
+  const locale = useLocale();
+  const t = useTranslations('navigation');
 
-  try {
-    locale = useLocale();
-    t = useTranslations('navigation');
-  } catch (error) {
-    // Fallback if intl context not available
-    locale = 'en';
-    t = (key: string) => {
-      const fallbackTexts: Record<string, string> = {
-        'features': 'Features',
-        'demo': 'Demo',
-        'security': 'Security',
-        'blog': 'Blog',
-        'toggle_theme': 'Toggle theme',
-        'toggle_language': 'Toggle language',
-        'toggle_menu': 'Toggle menu'
-      };
-      return fallbackTexts[key] || key;
-    };
-  }
-
-  // Navigation items with fallback text
+  // Navigation items
   const navItems = [
     { label: t('features'), path: "/#features" },
     { label: t('demo'), path: "/#demo" },
