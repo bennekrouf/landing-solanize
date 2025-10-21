@@ -1,3 +1,4 @@
+// src/components/layout/Navbar.tsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -13,10 +14,32 @@ const Navbar: React.FC = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
-  const locale = useLocale();
-  const t = useTranslations('navigation');
 
-  // Empty navigation items - add your own
+  // Safe locale handling with fallback
+  let locale: string;
+  let t: any;
+
+  try {
+    locale = useLocale();
+    t = useTranslations('navigation');
+  } catch (error) {
+    // Fallback if intl context not available
+    locale = 'en';
+    t = (key: string) => {
+      const fallbackTexts: Record<string, string> = {
+        'features': 'Features',
+        'demo': 'Demo',
+        'security': 'Security',
+        'blog': 'Blog',
+        'toggle_theme': 'Toggle theme',
+        'toggle_language': 'Toggle language',
+        'toggle_menu': 'Toggle menu'
+      };
+      return fallbackTexts[key] || key;
+    };
+  }
+
+  // Navigation items with fallback text
   const navItems = [
     { label: t('features'), path: "/#features" },
     { label: t('demo'), path: "/#demo" },
@@ -46,6 +69,25 @@ const Navbar: React.FC = () => {
 
   const currentLang = languages.find(lang => lang.code === locale) || languages[0];
 
+  const getLocalizedPath = (path: string) => {
+    // Handle anchor links
+    if (path.startsWith('#')) {
+      return `/${locale}${path}`;
+    }
+    // Handle root path
+    if (path === '/') {
+      return `/${locale}`;
+    }
+    // Handle other paths
+    return `/${locale}${path}`;
+  };
+
+  const switchLanguage = (newLocale: string) => {
+    // Replace current locale in pathname with new locale
+    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`);
+    return newPath;
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
@@ -64,7 +106,7 @@ const Navbar: React.FC = () => {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={`/${locale}${item.path}`}
+              href={getLocalizedPath(item.path)}
               className={`text-sm font-medium transition-colors hover:text-primary ${isLinkActive(item.path) ? "text-primary" : "text-foreground"
                 }`}
             >
@@ -88,7 +130,7 @@ const Navbar: React.FC = () => {
                 {languages.map((lang) => (
                   <Link
                     key={lang.code}
-                    href={pathname.replace(/^\/[a-z]{2}/, `/${lang.code}`)}
+                    href={switchLanguage(lang.code)}
                     className={`flex items-center px-3 py-2 text-sm hover:bg-secondary transition-colors ${locale === lang.code ? 'bg-secondary text-primary' : 'text-foreground'
                       }`}
                     onClick={() => setShowLangMenu(false)}
@@ -133,7 +175,7 @@ const Navbar: React.FC = () => {
                 {languages.map((lang) => (
                   <Link
                     key={lang.code}
-                    href={pathname.replace(/^\/[a-z]{2}/, `/${lang.code}`)}
+                    href={switchLanguage(lang.code)}
                     className={`flex items-center px-3 py-2 text-sm hover:bg-secondary transition-colors ${locale === lang.code ? 'bg-secondary text-primary' : 'text-foreground'
                       }`}
                     onClick={() => setShowLangMenu(false)}
@@ -181,7 +223,7 @@ const Navbar: React.FC = () => {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                href={`/${locale}${item.path}`}
+                href={getLocalizedPath(item.path)}
                 className={`block px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${isLinkActive(item.path) ? "text-primary" : "text-foreground"
                   }`}
                 onClick={toggleMenu}

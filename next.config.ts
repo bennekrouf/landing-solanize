@@ -1,3 +1,4 @@
+// next.config.ts
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
@@ -6,7 +7,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
-  
+
   images: {
     remotePatterns: [
       {
