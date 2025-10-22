@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { trackFeatureInteraction } from '@/components/analytics/PlausibleTracker';
 import { WhatsAppButton } from '@/components/contact/WhatsAppButton';
 import LayoutTemplate from '@/components/layout/LayoutTemplate';
-import { PlausibleTracker } from '@/components/analytics/PlausibleTracker';
 import { FloatingWhatsApp } from '@/components/contact/WhatsAppButton';
 
 import {
@@ -115,7 +114,6 @@ const SolanizeHomepage = () => {
 
   return (
     <LayoutTemplate>
-      <PlausibleTracker domain="solanize.ai" />
       <FloatingWhatsApp />
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-br from-background via-background to-muted/20">
