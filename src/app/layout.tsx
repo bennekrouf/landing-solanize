@@ -66,12 +66,16 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <head>
         <Script
-          defer
-          // data-domain="solanize.ai"
-          data-domain="ribh.io"
-          src="https://plausible.io/js/script.outbound-links.js"
+          async
+          src="https://plausible.io/js/pa-ER1x_u4R3Q2c1mhH1OyDg.js"
           strategy="afterInteractive"
         />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+            plausible.init()
+          `}
+        </Script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
