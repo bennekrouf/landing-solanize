@@ -14,7 +14,7 @@ interface WhatsAppButtonProps {
 }
 
 export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
-  number = "+1234567890", // Replace with your number
+  number = "+41764837540", // Replace with your number
   message = "Hello, I'm interested in Solanize.ai and would like to learn more about AI-powered Solana portfolio management.",
   source = "contact_button",
   className = "",
