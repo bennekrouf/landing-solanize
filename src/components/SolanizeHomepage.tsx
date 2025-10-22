@@ -152,7 +152,7 @@ const SolanizeHomepage = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             >
               <button
-                onClick={() => window.open('https://app.solanize.ai', '_blank')}
+                onClick={() => window.open('https://app.ribh.io', '_blank')}
                 className="px-8 py-4 bg-[#FF6B00] hover:bg-[#FF6B00]/90 text-white rounded-xl text-lg font-semibold transition-all duration-200 shadow-xl shadow-orange-500/20 hover:scale-105 flex items-center justify-center"
               >
                 {t('hero.cta_primary')}
@@ -468,7 +468,7 @@ const SolanizeHomepage = () => {
               <button
                 onClick={() => {
                   trackFeatureInteraction('app_launch');
-                  window.open('https://app.solanize.ai', '_blank');
+                  window.open('https://app.ribh.io', '_blank');
                 }}
                 className="px-8 py-4 bg-[#FF6B00] hover:bg-[#FF6B00]/90 text-white rounded-xl text-lg font-semibold transition-all duration-200 shadow-xl shadow-orange-500/20 hover:scale-105 flex items-center justify-center"
               >
@@ -498,7 +498,7 @@ const SolanizeHomepage = () => {
               <span className="text-muted-foreground text-sm">or</span>
 
               <a
-                href="mailto:contact@solanize.ai"
+                href="mailto:mb@mayorana.ch"
                 className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-muted-foreground hover:text-foreground hover:border-[#FF6B00]/20 transition-colors"
                 onClick={() => trackFeatureInteraction('email_contact')}
               >

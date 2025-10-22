@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://solanize.ai' : 'http://localhost:4002'),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://ribh.io' : 'http://localhost:4002'),
   openGraph: {
     type: "website",
     locale: "en_US",

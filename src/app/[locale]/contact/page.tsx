@@ -30,8 +30,8 @@ const ContactPage = () => {
       icon: <FiMail className="w-6 h-6" />,
       title: "Email",
       description: "Drop us a line anytime",
-      contact: "contact@solanize.ai",
-      action: "mailto:contact@solanize.ai"
+      contact: "mb@mayorana.ch",
+      action: "mailto:mb@mayorana.ch"
     },
     {
       icon: <FiClock className="w-6 h-6" />,
