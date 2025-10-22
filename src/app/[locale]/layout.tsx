@@ -1,7 +1,7 @@
 // src/app/[locale]/layout.tsx
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from '@/app/providers';
-import Script from "next/script";
+import PlausibleProvider from 'next-plausible';
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -55,22 +55,14 @@ export default async function LocaleLayout({
   return (
     <html lang={validLocale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Script
-          async
-          src="https://plausible.io/js/pa-ER1x_u4R3Q2c1mhH1OyDg.js"
-          strategy="afterInteractive"
-        />
-        <Script id="plausible-setup" strategy="afterInteractive">
-          {`
-            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-            plausible.init()
-          `}
-        </Script>
-        <NextIntlClientProvider locale={validLocale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <PlausibleProvider domain="ribh.io">
+
+          <NextIntlClientProvider locale={validLocale} messages={messages}>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+              {children}
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </PlausibleProvider>
       </body>
     </html>
   );

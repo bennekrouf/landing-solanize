@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { trackWhatsAppClick } from '../analytics/PlausibleTracker';
+import { usePlausible } from 'next-plausible';
 
 interface WhatsAppButtonProps {
   number?: string;
@@ -24,8 +24,9 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${number}?text=${encodedMessage}`;
 
+  const plausible = usePlausible();
   const handleClick = () => {
-    trackWhatsAppClick(source);
+    plausible('WhatsApp Contact', { props: { source } });
   };
 
   const baseClasses = "flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 transition-all duration-200";

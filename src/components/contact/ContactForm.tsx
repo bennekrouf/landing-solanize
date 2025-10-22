@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FiMail, FiUser, FiHome, FiMessageSquare, FiCheck } from 'react-icons/fi';
-import { trackContactForm } from '../analytics/PlausibleTracker';
+import { usePlausible } from 'next-plausible';
 
 interface ContactFormData {
   name: string;
@@ -25,6 +25,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const plausible = usePlausible();
   const {
     register,
     handleSubmit,
@@ -62,7 +63,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         throw new Error(errorData.message || 'Failed to submit form');
       }
 
-      trackContactForm('main_contact');
+      plausible('Contact Form Submit', { props: { form_type: 'main_contact' } });
       setFormSubmitted(true);
       reset();
 

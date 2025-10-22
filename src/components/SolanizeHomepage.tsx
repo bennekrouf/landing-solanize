@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { trackFeatureInteraction } from '@/components/analytics/PlausibleTracker';
+import { usePlausible } from 'next-plausible';
 import { WhatsAppButton } from '@/components/contact/WhatsAppButton';
 import LayoutTemplate from '@/components/layout/LayoutTemplate';
 import { FloatingWhatsApp } from '@/components/contact/WhatsAppButton';
@@ -27,6 +27,7 @@ import { FiMail } from 'react-icons/fi';
 const SolanizeHomepage = () => {
   const t = useTranslations();
 
+  const plausible = usePlausible();
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -80,7 +81,9 @@ const SolanizeHomepage = () => {
       gradient: "from-orange-500 to-red-500"
     }
   ];
-
+  const handleFeatureClick = (feature: string) => {
+    plausible('Feature Interaction', { props: { feature } });
+  };
   const howItWorksSteps = [
     {
       step: "1",
@@ -467,7 +470,7 @@ const SolanizeHomepage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button
                 onClick={() => {
-                  trackFeatureInteraction('app_launch');
+                  handleFeatureClick('app_launch');
                   window.open('https://app.ribh.io', '_blank');
                 }}
                 className="px-8 py-4 bg-[#FF6B00] hover:bg-[#FF6B00]/90 text-white rounded-xl text-lg font-semibold transition-all duration-200 shadow-xl shadow-orange-500/20 hover:scale-105 flex items-center justify-center"
@@ -478,7 +481,7 @@ const SolanizeHomepage = () => {
               <Link
                 href="/contact"
                 className="px-8 py-4 border-2 border-border hover:border-[#FF6B00] rounded-xl text-lg font-semibold hover:bg-[#FF6B00]/5 transition-all duration-200 flex items-center justify-center"
-                onClick={() => trackFeatureInteraction('contact_navigation')}
+                onClick={() => handleFeatureClick('contact_navigation')}
               >
                 Get in Touch
               </Link>
@@ -500,7 +503,7 @@ const SolanizeHomepage = () => {
               <a
                 href="mailto:mb@mayorana.ch"
                 className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-muted-foreground hover:text-foreground hover:border-[#FF6B00]/20 transition-colors"
-                onClick={() => trackFeatureInteraction('email_contact')}
+                onClick={() => handleFeatureClick('email_contact')}
               >
                 <FiMail className="w-4 h-4" />
                 Email Us
