@@ -1,24 +1,9 @@
 [
   {
-    "slug": "getting-started",
-    "title": "Getting Started with Cvenom",
-    "description": "Learn how to optimize your CV with AI",
-    "date": "2025-01-15",
-    "author": "Cvenom Team",
-    "tags": [
-      "tutorial",
-      "getting-started"
-    ],
-    "lang": "en",
-    "readingTime": "1 min read",
-    "content": "<h1>Welcome to Cvenom</h1>\n<p>Your AI-powered CV sidekick is here to help you land your dream job.</p>\n<h2>Key Features</h2>\n<ul>\n<li>Smart CV adaptation</li>\n<li>ATS optimization</li>\n<li>Multilingual support</li>\n</ul>\n<p>Start optimizing your CV today!</p>\n",
-    "status": "published"
-  },
-  {
-    "slug": "welcome",
+    "slug": "2025-01-15-welcome",
     "title": "Welcome to Solanize",
     "description": "The easiest way to manage your Solana portfolio",
-    "date": "2025-01-15",
+    "date": "2025-01-15T00:00:00.000Z",
     "author": "Solanize Team",
     "tags": [
       "announcement",

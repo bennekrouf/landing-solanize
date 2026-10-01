@@ -5,18 +5,19 @@ const { marked } = require('marked');
 const slugify = require('slugify');
 const readingTime = require('reading-time');
 
-function generateBlogData() {
-  const blogDir = path.join(process.cwd(), 'content/blog');
+const LOCALES = ['en', 'fr'];
+
+function loadPostsForLocale(locale) {
+  const blogDir = path.join(process.cwd(), 'content', locale, 'blog');
 
   if (!fs.existsSync(blogDir)) {
     fs.mkdirSync(blogDir, { recursive: true });
-    console.log('Blog directory created');
-    return;
+    return [];
   }
 
   const files = fs.readdirSync(blogDir).filter(file => file.endsWith('.md'));
 
-  const posts = files.map(filename => {
+  return files.map(filename => {
     const filePath = path.join(blogDir, filename);
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
@@ -32,13 +33,16 @@ function generateBlogData() {
       date: data.date || new Date().toISOString(),
       author: data.author || 'Solanize Team',
       tags: data.tags || [],
-      lang: data.lang || 'en',
+      lang: locale,
       readingTime: stats.text,
       content: html,
       ...data
     };
   });
+}
 
+function generateBlogData() {
+  const posts = LOCALES.flatMap(locale => loadPostsForLocale(locale));
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const outputPath = path.join(process.cwd(), 'public/blog-data.json');
