@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     default: "Solanize.ai - Talk to your Solana wallet",
     template: "%s | Solanize.ai"
   },
-  description: "Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom.",
-  keywords: ["Solana", "DeFi", "AI", "Portfolio Management", "Phantom Wallet", "Jupiter"],
+  description: "Check balances, look up prices and swap any token through Jupiter — just by chatting. Every transaction is signed in your own wallet.",
+  keywords: ["Solana", "DeFi", "AI", "Token Swaps", "Phantom Wallet", "Jupiter"],
   authors: [{ name: "Solanize Team" }],
   creator: "Solanize",
   publisher: "Solanize",
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Solanize.ai",
     title: "Solanize.ai - Talk to your Solana wallet",
-    description: "Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom.",
+    description: "Check balances, look up prices and swap any token through Jupiter — just by chatting. Every transaction is signed in your own wallet.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Solanize.ai - Talk to your Solana wallet",
-    description: "Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom.",
+    description: "Check balances, look up prices and swap any token through Jupiter — just by chatting. Every transaction is signed in your own wallet.",
     creator: "@solanize_ai",
   },
   robots: {

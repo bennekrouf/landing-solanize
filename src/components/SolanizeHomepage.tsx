@@ -19,7 +19,8 @@ import {
   FiGlobe,
   FiArrowRight,
   FiPlay,
-  FiStar
+  FiStar,
+  FiX
 } from 'react-icons/fi';
 import Link from 'next/link';
 import { FiMail } from 'react-icons/fi';
@@ -108,11 +109,21 @@ const SolanizeHomepage = () => {
     }
   ];
 
+  // Only the rows where Solanize is strong; its own column is a tick on every
+  // row. A competitor cell is true, false, or a note on what it does instead.
+  const comparison = t.raw('comparison') as {
+    feature: string;
+    yes: string;
+    no: string;
+    competitors: string[];
+    rows: { feature: string; them: (boolean | string)[] }[];
+  };
+
   const integrations = [
     { name: "Phantom", desc: "Wallet" },
     { name: "Jupiter", desc: "DEX Aggregator" },
-    { name: "Marinade", desc: "Liquid Staking" },
-    { name: "Pyth", desc: "Price Oracle" }
+    { name: "Solflare", desc: "Wallet" },
+    { name: "Solana", desc: "Mainnet & Devnet" }
   ];
 
   return (
@@ -132,7 +143,7 @@ const SolanizeHomepage = () => {
             <motion.div variants={fadeInUp} className="mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-[#FF6B00]/10 border border-[#FF6B00]/20 text-[#FF6B00] dark:text-[#FF6B00]">
                 <FiStar className="w-4 h-4 mr-2" />
-                AI-Powered Solana DeFi
+                Chat-Driven Solana Wallet
               </span>
             </motion.div>
 
@@ -189,13 +200,13 @@ const SolanizeHomepage = () => {
                   </div>
                   <div className="flex-1">
                     <div className="bg-[#FF6B00]/10 border border-[#FF6B00]/20 rounded-lg p-4">
-                      <p className="text-sm font-medium mb-2">I'll help you rebalance your portfolio:</p>
+                      <p className="text-sm font-medium mb-2">Here is the Jupiter quote:</p>
                       <div className="text-xs text-muted-foreground space-y-1">
-                        <div>• Swap 1,240 USDC → 4.2 SOL</div>
-                        <div>• Fee: ~$0.85 • Slippage: 0.1%</div>
+                        <div>• 50 USDC → ~0.3 SOL expected</div>
+                        <div>• Price impact: &lt;0.1% • Slippage limit: 0.5%</div>
                         <div className="pt-2">
                           <button className="text-[#FF6B00] hover:text-[#FF6B00]/80 font-medium">
-                            Review Transaction →
+                            Sign in your wallet →
                           </button>
                         </div>
                       </div>
@@ -377,7 +388,7 @@ const SolanizeHomepage = () => {
               <div className="w-16 h-16 bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center mb-6">
                 <FiShield className="w-8 h-8 text-[#FF6B00]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Phantom Integration</h3>
+              <h3 className="text-xl font-bold mb-3">{t('security.phantom_integration_title')}</h3>
               <p className="text-muted-foreground">{t('security.phantom_integration')}</p>
             </motion.div>
 
@@ -385,7 +396,7 @@ const SolanizeHomepage = () => {
               <div className="w-16 h-16 bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center mb-6">
                 <FiEye className="w-8 h-8 text-[#FF6B00]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">On-Chain Transparency</h3>
+              <h3 className="text-xl font-bold mb-3">{t('security.on_chain_transparency_title')}</h3>
               <p className="text-muted-foreground">{t('security.on_chain_transparency')}</p>
             </motion.div>
 
@@ -393,7 +404,7 @@ const SolanizeHomepage = () => {
               <div className="w-16 h-16 bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center mb-6">
                 <FiLock className="w-8 h-8 text-[#FF6B00]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Security-First Design</h3>
+              <h3 className="text-xl font-bold mb-3">{t('security.security_first_title')}</h3>
               <p className="text-muted-foreground">{t('security.security_first')}</p>
             </motion.div>
 
@@ -401,15 +412,81 @@ const SolanizeHomepage = () => {
               <div className="w-16 h-16 bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center mb-6">
                 <FiCheck className="w-8 h-8 text-[#FF6B00]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Audited Contracts</h3>
-              <p className="text-muted-foreground">{t('security.audited')}</p>
+              <h3 className="text-xl font-bold mb-3">{t('security.devnet_title')}</h3>
+              <p className="text-muted-foreground">{t('security.devnet')}</p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* Comparison */}
+      <section id="compare" className="py-20 bg-muted/30">
+        <div className="container max-w-6xl">
+          <motion.div
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t('comparison.title')}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t('comparison.subtitle')}</p>
+          </motion.div>
+
+          {/* Scrolls inside its box at phone width rather than squeezing four columns. */}
+          <div className="overflow-x-auto rounded-2xl border border-border bg-card">
+            <table className="w-full min-w-[640px] text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th scope="col" className="sticky left-0 z-[1] bg-card p-4 text-left font-medium text-muted-foreground">
+                    {comparison.feature}
+                  </th>
+                  <th scope="col" className="p-4 text-center font-bold text-[#FF6B00] bg-[#FF6B00]/10">
+                    Solanize
+                  </th>
+                  {comparison.competitors.map((name) => (
+                    <th key={name} scope="col" className="p-4 text-center font-medium text-muted-foreground">
+                      {name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.rows.map((row) => (
+                  <tr key={row.feature} className="border-b border-border last:border-b-0">
+                    <th
+                      scope="row"
+                      className="sticky left-0 z-[1] bg-card p-4 text-left font-medium max-w-[14rem] md:max-w-none"
+                    >
+                      {row.feature}
+                    </th>
+                    <td className="p-4 text-center bg-[#FF6B00]/10">
+                      <FiCheck className="inline w-5 h-5 text-green-600 dark:text-green-400" aria-label={comparison.yes} />
+                    </td>
+                    {row.them.map((value, i) => (
+                      <td key={i} className="p-4 text-center">
+                        {value === true ? (
+                          <FiCheck className="inline w-4 h-4 text-muted-foreground" aria-label={comparison.yes} />
+                        ) : value === false ? (
+                          <FiX className="inline w-4 h-4 text-red-500/80" aria-label={comparison.no} />
+                        ) : (
+                          <span className="inline-block max-w-[11rem] text-xs leading-snug text-amber-700 dark:text-amber-300">
+                            {value}
+                          </span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">{t('comparison.note')}</p>
+        </div>
+      </section>
+
       {/* Integrations */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container">
           <motion.div
             className="text-center mb-16"

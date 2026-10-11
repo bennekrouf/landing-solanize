@@ -1,7 +1,7 @@
 {
   "metadata": {
     "site_title": "Solanize.ai",
-    "site_description": "Talk to your Solana wallet. Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom."
+    "site_description": "Talk to your Solana wallet. Check balances, look up prices and swap any token through Jupiter — just by chatting. Every transaction is signed in your own wallet."
   },
   "contact": {
     "title": "Contact",
@@ -31,69 +31,120 @@
   },
   "hero": {
     "headline": "Talk to your Solana wallet.",
-    "subheadline": "Swap, stake, lend, and rebalance your portfolio — just by chatting. Powered by AI, secured by Phantom.",
+    "subheadline": "Check balances, look up prices and swap any token through Jupiter — just by chatting. Every transaction is signed in your own wallet.",
     "cta_primary": "🚀 Try the App",
     "cta_secondary": "⚡ Join Waitlist",
-    "demo_text": "Type: \"Rebalance to 60% SOL, 40% USDC\""
+    "demo_text": "Type: \"Swap 50 USDC to SOL\""
   },
   "how_it_works": {
     "title": "How It Works",
-    "subtitle": "Three simple steps to manage your Solana portfolio",
+    "subtitle": "Three steps from a sentence to a signed transaction",
     "step1": {
       "title": "Type",
-      "description": "Use natural language: \"Rebalance to 60% SOL, 40% USDC\"",
-      "example": "\"Rebalance to 60% SOL, 40% USDC\""
+      "description": "Ask in plain language:",
+      "example": "\"Swap 50 USDC to SOL\""
     },
     "step2": {
-      "title": "AI Suggests",
-      "description": "Review proposed transactions with prices, fees, and slippage",
-      "example": "prices, fees and slippage"
+      "title": "Solanize Prepares",
+      "description": "You see the Jupiter quote first:",
+      "example": "expected output, price impact, route"
     },
     "step3": {
       "title": "You Sign",
-      "description": "Phantom wallet pops up, you approve, transaction executed",
-      "example": "you approve, transaction executed"
+      "description": "Phantom or Solflare asks you to approve:",
+      "example": "nothing is sent until you sign"
     }
   },
   "features": {
     "title": "Features",
-    "subtitle": "Everything you need for DeFi, simplified",
+    "subtitle": "What Solanize does today",
     "natural_language": {
       "title": "Natural Language Commands",
       "description": "No complex UIs. Just chat with your wallet like talking to a friend."
     },
     "multi_protocol": {
-      "title": "Multi-Protocol Support",
-      "description": "Jupiter for swaps, Marinade for staking, and more protocols integrated."
+      "title": "Swaps Through Jupiter",
+      "description": "Any token Jupiter can route, found by symbol, name or mint address."
     },
     "transparent": {
       "title": "Transparent Transactions",
-      "description": "Review all prices, fees, and slippage before signing anything."
+      "description": "See the quote — expected output, price impact and route — before you sign anything."
     },
     "secure": {
-      "title": "Phantom Secured",
-      "description": "Your keys stay in Phantom wallet. Never shared, always secure."
+      "title": "Your Wallet Signs",
+      "description": "Phantom or Solflare signs every transaction. Solanize never holds your keys."
     },
     "portfolio": {
-      "title": "Portfolio Copilot",
-      "description": "Track balances, simulate trades, and get AI-powered insights."
+      "title": "Wallet Overview",
+      "description": "Every token you hold with its balance and USD value, plus your recent and pending transactions."
     },
     "real_time": {
-      "title": "Real-Time Data",
-      "description": "Live prices from Pyth Network and instant market updates."
+      "title": "Live Prices",
+      "description": "Current USD prices from Jupiter for any token, by symbol or mint address."
     }
   },
   "demo": {
     "title": "See It In Action",
-    "subtitle": "Watch how easy it is to manage your Solana portfolio"
+    "subtitle": "Watch a swap go from one sentence to a signed transaction"
   },
   "security": {
     "title": "Trust & Security",
     "subtitle": "Your assets are always under your control",
-    "phantom_integration": "Phantom wallet integration — no private keys shared",
-    "on_chain_transparency": "On-chain transparency — link to Solscan for every transaction",
-    "security_first": "Security-first design — transactions proposed, never auto-executed",
-    "audited": "Smart contracts audited by leading security firms"
+    "phantom_integration": "Phantom or Solflare signs every transaction — Solanize never sees your private key",
+    "on_chain_transparency": "Every transaction returns its signature, so you can look it up on any Solana explorer",
+    "security_first": "Solanize only prepares unsigned transactions — it cannot move funds on its own",
+    "phantom_integration_title": "Your Wallet Signs",
+    "on_chain_transparency_title": "On-Chain Transparency",
+    "security_first_title": "Proposed, Never Auto-Executed",
+    "devnet_title": "Rehearse on Devnet",
+    "devnet": "Try balances and transfers on devnet before you touch real funds"
+  },
+  "comparison": {
+    "title": "How Solanize compares",
+    "subtitle": "Only the things Solanize is strong at are listed. The others do plenty it doesn't — this is why you would pick it.",
+    "feature": "Feature",
+    "yes": "Yes",
+    "no": "No",
+    "note": "Compared in October 2026 from each product's public documentation.",
+    "competitors": [
+      "Solana Agent Kit",
+      "Griffain",
+      "Jupiter"
+    ],
+    "rows": [
+      {
+        "feature": "Every transaction comes back unsigned: only your own wallet signs it, the server holds no keys",
+        "them": [
+          "You hand the agent your private key",
+          "A delegated agent wallet signs for you",
+          true
+        ]
+      },
+      {
+        "feature": "Ask in plain language from Claude, through an MCP connector",
+        "them": [
+          "An MCP server you run with your key",
+          "In its own app only",
+          false
+        ]
+      },
+      {
+        "feature": "Rehearse transfers on devnet first, chosen per request",
+        "them": [
+          "Change the RPC URL yourself",
+          false,
+          "Mainnet only"
+        ]
+      },
+      {
+        "feature": "Nothing to install, host or configure",
+        "them": [
+          "You build and run it",
+          "Access pass and onboarding fee",
+          true
+        ]
+      }
+    ]
   },
   "integrations": {
     "title": "Powered By",
@@ -101,12 +152,12 @@
   },
   "cta": {
     "title": "Ready to Talk to Your Wallet?",
-    "subtitle": "Join thousands managing their Solana portfolio the smart way",
-    "primary": "🚀 Start Now with Phantom",
+    "subtitle": "Connect your wallet and make your first swap in one sentence.",
+    "primary": "🚀 Connect Your Wallet",
     "secondary": "⚡ Join the Waitlist"
   },
   "footer": {
-    "description": "AI-powered Solana wallet interface",
+    "description": "Chat with your Solana wallet",
     "quick_links": "Quick Links",
     "category": "Resources",
     "connect": "Connect",

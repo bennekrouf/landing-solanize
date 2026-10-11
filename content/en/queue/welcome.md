@@ -9,7 +9,7 @@ lang: "en"
 
 # Welcome to Solanize
 
-Talk to your Solana wallet like never before. Swap, stake, and manage your portfolio with simple chat commands.
+Talk to your Solana wallet like never before. Check balances, look up prices and swap tokens with simple chat commands — every transaction signed in your own wallet.
 
 ## Getting Started
 
